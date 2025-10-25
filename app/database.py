@@ -3,14 +3,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# URL de conexão com o PostgreSQL
-SQLALCHEMY_DATABASE_URL = "postgresql+psycopg2://postgres:150525@localhost:5432/clinica_medica"
+# URL do banco no Render
+SQLALCHEMY_DATABASE_URL = "postgresql://clinica_medica_edyk_user:R931zzEtWFr9VEBimGYS5VKiEGXWfzk5@dpg-d3ul5eodl3ps73f806d0-a.oregon-postgres.render.com/clinica_medica_edyk"
 
 # Cria o engine de conexão
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL,
-    echo=True  # Mostra no terminal os comandos SQL executados (opcional)
-)
+engine = create_engine(SQLALCHEMY_DATABASE_URL, echo=True)
 
 # Cria a sessão para interagir com o banco
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
