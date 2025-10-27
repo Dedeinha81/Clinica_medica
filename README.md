@@ -50,27 +50,27 @@ linica_medica/
 
 │── app/
 
-│ │── main.py # 🚀 Ponto de entrada da aplicação FastAPI
+│ │── main.py - 🚀 Ponto de entrada da aplicação FastAPI
 
-│ │── models.py # 🧱 Modelos do banco de dados (SQLAlchemy)
+│ │── models.py - 🧱 Modelos do banco de dados (SQLAlchemy)
 
-│ │── schemas.py # 🧩 Schemas Pydantic (validação e resposta)
+│ │── schemas.py - 🧩 Schemas Pydantic (validação e resposta)
 
-│ │── database.py # 🗄️ Configuração do banco de dados PostgreSQL
+│ │── database.py - 🗄️ Configuração do banco de dados PostgreSQL
 
-│ │── crud.py # ⚙️ Funções CRUD (Create, Read, Update, Delete)
+│ │── crud.py - ⚙️ Funções CRUD (Create, Read, Update, Delete)
 
 │ └── routes/
 
-│ │── pacientes.py # 👩‍⚕️ Rotas de Pacientes
+│ │── pacientes.py - 👩‍⚕️ Rotas de Pacientes
 
-│ │── medicos.py # 🩺 Rotas de Médicos
+│ │── medicos.py - 🩺 Rotas de Médicos
 
-│ └── consultas.py # 📅 Rotas de Consultas
+│ └── consultas.py - 📅 Rotas de Consultas
 
-│── requirements.txt # 📦 Dependências do projeto
+│── requirements.txt - 📦 Dependências do projeto
 
-│── Procfile # ⚡ Arquivo de inicialização para deploy no Render
+│── Procfile - ⚡ Arquivo de inicialização para deploy no Render
 
 
 ---
