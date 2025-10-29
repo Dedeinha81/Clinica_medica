@@ -13,6 +13,7 @@ O projeto foi hospedado gratuitamente na nuvem com **Render**, utilizando **CI/C
 ✅ Integração com **Banco de Dados PostgreSQL**  
 ✅ Documentação automática com **Swagger UI**  
 ✅ Deploy automático com **Render (CI/CD)**  
+✅ **Testes Unitários Automatizados** com **Pytest** 
 
 ---
 
@@ -24,7 +25,11 @@ O projeto foi hospedado gratuitamente na nuvem com **Render**, utilizando **CI/C
 🧩 **Pydantic**  
 🔥 **Uvicorn**  
 🗄️ **PostgreSQL**  
-☁️ **Render (Deploy na Nuvem com CI/CD)**  
+☁️ **Render (Deploy na Nuvem com CI/CD)** 
+
+🧪 **Pytest (Testes Unitários)**  
+
+
 
 ---
 
@@ -46,7 +51,7 @@ Assim, o projeto fica sempre **online e atualizado** 🌍✨
 
 ## 🧩 Estrutura do Projeto
 
-linica_medica/
+Clinica_medica/
 
 │── app/
 
@@ -68,9 +73,30 @@ linica_medica/
 
 │ └── consultas.py - 📅 Rotas de Consultas
 
+│── tests/
+
+│ │── test_consultas.py - 🧪 Testes unitários para Consultas
+
+│ │── test_medicos.py - 🧪 Testes unitários para Médicos
+
+│ │── test_pacientes.py - 🧪 Testes unitários para Pacientes
+
 │── requirements.txt - 📦 Dependências do projeto
 
 │── Procfile - ⚡ Arquivo de inicialização para deploy no Render
+
+---
+
+## 🧪 Testes Unitários
+
+O projeto possui **testes unitários automatizados** com **[Pytest]** para garantir que todas as rotas e funcionalidades da API estejam funcionando corretamente.
+
+### 📋 Como Rodar os Testes
+
+Na raiz do projeto, execute:
+
+
+python -m pytest -v
 
 
 ---
