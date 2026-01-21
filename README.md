@@ -1,115 +1,148 @@
 # 🏥 Clínica Médica API
 
-API RESTful desenvolvida em **Python (FastAPI)** para o gerenciamento de pacientes, médicos e consultas de uma clínica médica.  
-O projeto foi hospedado gratuitamente na nuvem com **Render**, utilizando **CI/CD** para deploy automático a cada atualização no GitHub.
+API RESTful desenvolvida em **Python com FastAPI** para o gerenciamento de **pacientes, médicos e consultas** em uma clínica médica.
+
+O objetivo do projeto é simular um **cenário real de backend**, aplicando boas práticas de arquitetura, regras de negócio, testes automatizados e deploy contínuo em nuvem.
+
+A aplicação está hospedada no **Render**, com **CI/CD**, garantindo atualização automática a cada push no GitHub.
+
+---
+
+## 🎯 Problema que o projeto resolve
+Clínicas médicas precisam de um sistema confiável para:
+- Organizar pacientes e médicos
+- Controlar agendamentos
+- Garantir integridade dos dados
+- Facilitar a manutenção e evolução do sistema
+
+Esta API centraliza essas operações de forma segura, escalável e bem estruturada.
 
 ---
 
 ## ✨ Funcionalidades
+- Cadastro, listagem, atualização e exclusão de **Pacientes**
+- Cadastro, listagem, atualização e exclusão de **Médicos**
+- **Agendamento e gerenciamento de Consultas**
+- Persistência de dados com **PostgreSQL**
+- Documentação automática com **Swagger UI**
+- **Testes unitários automatizados** com Pytest
+- **Deploy automático** via CI/CD
 
-✅ Cadastro, listagem, atualização e exclusão de **Pacientes**  
-✅ Cadastro, listagem, atualização e exclusão de **Médicos**  
-✅ Agendamento e gerenciamento de **Consultas**  
-✅ Integração com **Banco de Dados PostgreSQL**  
-✅ Documentação automática com **Swagger UI**  
-✅ Deploy automático com **Render (CI/CD)**  
-✅ **Testes Unitários Automatizados** com **Pytest** 
+---
+
+## 🧠 Regras de Negócio
+- Cada consulta está associada a **um paciente e um médico**
+- Não é possível criar consultas sem vínculos válidos
+- Os dados seguem validação rigorosa com **Pydantic**
+- As operações seguem o padrão CRUD com separação de responsabilidades
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-
-🐍 **Python 3.13**  
-⚡ **FastAPI**  
-🧱 **SQLAlchemy**  
-🧩 **Pydantic**  
-🔥 **Uvicorn**  
-🗄️ **PostgreSQL**  
-☁️ **Render (Deploy na Nuvem com CI/CD)** 
-
-🧪 **Pytest (Testes Unitários)**  
-
-
+- Python 3.13
+- FastAPI
+- SQLAlchemy
+- Pydantic
+- Uvicorn
+- PostgreSQL
+- Pytest
+- Render (Deploy em Nuvem com CI/CD)
 
 ---
 
-## 🚀 Como Acessar
-
-A aplicação está online!  
-Acesse diretamente o Swagger da API para testar os endpoints interativamente 👇  
-
-👉 **[https://clinica-medica-xuvt.onrender.com/docs](https://clinica-medica-xuvt.onrender.com/docs)**
-
----
-
-## 🔁 CI/CD - Deploy Automático
-
-Toda vez que um **push** é feito no repositório do GitHub, o **Render** realiza automaticamente o **deploy** da nova versão.  
-Assim, o projeto fica sempre **online e atualizado** 🌍✨  
-
----
-
-## 🧩 Estrutura do Projeto
+## 🏗️ Arquitetura do Projeto
+O projeto foi estruturado seguindo boas práticas de organização e manutenção:
 
 Clinica_medica/
 
 │── app/
 
-│ │── main.py - 🚀 Ponto de entrada da aplicação FastAPI
+│ │── main.py - Ponto de entrada da aplicação
 
-│ │── models.py - 🧱 Modelos do banco de dados (SQLAlchemy)
+│ │── models.py - Modelos do banco de dados (SQLAlchemy)
 
-│ │── schemas.py - 🧩 Schemas Pydantic (validação e resposta)
+│ │── schemas.py - Validação e serialização de dados (Pydantic)
 
-│ │── database.py - 🗄️ Configuração do banco de dados PostgreSQL
+│ │── database.py - Configuração do banco de dados
 
-│ │── crud.py - ⚙️ Funções CRUD (Create, Read, Update, Delete)
+│ │── crud.py - Regras de acesso aos dados
 
 │ └── routes/
 
-│ │── pacientes.py - 👩‍⚕️ Rotas de Pacientes
+│ │── pacientes.py
 
-│ │── medicos.py - 🩺 Rotas de Médicos
+│ │── medicos.py
 
-│ └── consultas.py - 📅 Rotas de Consultas
+│ └── consultas.py
 
 │── tests/
 
-│ │── test_consultas.py - 🧪 Testes unitários para Consultas
+│ │── test_pacientes.py
 
-│ │── test_medicos.py - 🧪 Testes unitários para Médicos
+│ │── test_medicos.py
 
-│ │── test_pacientes.py - 🧪 Testes unitários para Pacientes
+│ │── test_consultas.py
 
-│── requirements.txt - 📦 Dependências do projeto
+│── requirements.txt
 
-│── Procfile - ⚡ Arquivo de inicialização para deploy no Render
+│── Procfile
+
+
 
 ---
 
-## 🧪 Testes Unitários
+## 🚀 Acesso à Aplicação
+A API está online e pode ser testada diretamente pelo Swagger:
 
-O projeto possui **testes unitários automatizados** com **[Pytest]** para garantir que todas as rotas e funcionalidades da API estejam funcionando corretamente.
+👉 https://clinica-medica-xuvt.onrender.com/docs
 
-### 📋 Como Rodar os Testes
+---
 
-Na raiz do projeto, execute:
+## ⚙️ Como Executar Localmente
 
+
+# Clone o repositório
+
+git clone https://github.com/Dedeinha81/Clinica_medica.git
+
+# Acesse a pasta
+
+cd Clinica_medica
+
+# Crie e ative um ambiente virtual
+
+python -m venv venv
+
+source venv/bin/activate  - Windows: venv\Scripts\activate
+
+
+# Instale as dependências
+
+pip install -r requirements.txt
+
+
+# Execute a aplicação
+
+uvicorn app.main:app --reload
+
+---
+
+🧪 Testes Unitários
+
+Os testes garantem que as rotas e regras principais da API funcionem corretamente.
+
+Para executar:
 
 python -m pytest -v
 
-
 ---
+👩‍💻 Autora
 
-## 👩‍💻 Autora
+Andrea Cruz
+Desenvolvedora Back-End em formação, com foco em Python, APIs REST, testes automatizados e boas práticas de desenvolvimento.
 
-**Andréa Cruz**  
-Estudante de **Desenvolvimento Back-End**, apaixonada por tecnologia e em constante aprendizado sobre **APIs, Python e Bancos de Dados**.  
 
-🌐 [LinkedIn](https://www.linkedin.com/in/andrea-cruz-leonardo/)  
 
----
-
-⭐ Se este projeto te inspirou, deixe uma **estrela** no repositório! 🌟
+⭐ Se este projeto te ajudou ou te inspirou, deixe uma estrela no repositório!
 
 
